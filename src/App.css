@@ -1,0 +1,50 @@
+.box{
+	border: 1px solid silver;
+	float: left;
+	width: 70px;
+	height: 70px;
+	background: white;
+	cursor: pointer;
+}
+.box.small{
+	width: 40px;
+	height: 40px;
+	cursor: default;
+	margin-right: 20px;
+}
+.box.covered{
+	background: #d2691e;
+	content: '?';
+	text-align: center;
+	font-size: 40px;
+	line-height: 60px;
+}
+.box.covered:hover{
+	background: #8c3f08;
+}
+.box.frozen{
+	cursor: not-allowed;
+}
+.box.frozen:hover{
+	background: #d2691e;
+}
+.task{
+	font-size: 25px;
+	margin-bottom: 10px;
+}
+.status{
+	font-size: 14px;
+	line-height: 30px;
+}
+.failed{
+	color: red;
+}
+.success{
+	color: green;
+}
+.red{background: red;}
+.blue{background: blue;}
+.yellow{background: yellow;}
+.green{background: green;}
+.black{background: black;}
+.gray{background: gray;}
