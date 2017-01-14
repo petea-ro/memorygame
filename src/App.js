@@ -36,7 +36,7 @@ class App extends Component {
     }
 
     this.state={
-      showIntroPage: false,
+      showIntroPage: true,
       showLevelsPage: true,
       level: 1,
       unlockedLevel: 1,
@@ -129,14 +129,17 @@ class App extends Component {
   handleCellClick(row, col){
     if(this.state.started && this.state.allCovered){
       var userAnswers = this.state.userAnswers;
-      var key = row+","+col;
-      if(userAnswers.indexOf(key) === -1){
-        userAnswers.push(key);
-      } 
       var found = this.state.found;     
-      if(this.state.answersPos.indexOf(key) >=0){
-        found++;
-      }
+      var key = row+","+col;
+      
+      //check double clicking on same cell
+      if(userAnswers.indexOf(key) === -1){ 
+        userAnswers.push(key); //save answer 
+        if(this.state.answersPos.indexOf(key) >=0){ 
+          //answer is good 
+          found++;
+        }
+      } 
       this.setState({
         userAnswers: userAnswers,
         found: found,

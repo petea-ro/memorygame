@@ -1,5 +1,5 @@
 {
-  "name": "game1",
+  "name": "game2",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build&&gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "homepage": "https://petea-ro.github.io/memorygame/"
 }

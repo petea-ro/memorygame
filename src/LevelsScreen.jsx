@@ -13,9 +13,14 @@ export default class LevelsScreen extends Component {
 			buttons.push(button);
 
 		}
+		var message = '';
+		if(this.props.numLevels === this.props.unlockedLevel){
+			message= <h3 className="success">Congratulation you passed all levels!</h3>
+		}
 		return (
 			<div className="text-center well">
-				<h1>Click on level to start</h1>
+				<h1>Choose any available level</h1>
+				{message}
 				<div className="row">
 					{buttons}
 				</div>

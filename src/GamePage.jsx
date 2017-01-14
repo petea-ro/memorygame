@@ -40,7 +40,11 @@ class StatusInfo extends Component{
 	render(){
 		var status = '';
 		if(this.props.started === false){
-			status = <button className="btn btn-primary" onClick={this.props.onShowCards}>Show Cards</button>; 
+			status = (
+				<div>
+					<button className="btn btn-lg btn-primary" onClick={this.props.onShowCards}>Show Cards</button>
+				</div>
+				); 
 		}
 		else{
 			if(this.props.remaining>0){
@@ -49,7 +53,7 @@ class StatusInfo extends Component{
 			else if(this.props.revealed > this.props.numFinds){
 				status = (
 					<div className="failed">
-						<button className="btn btn-danger" onClick={this.props.onRestart.bind(this)}>
+						<button className="btn btn-lg btn-danger" onClick={this.props.onRestart.bind(this)}>
 							Restart
 						</button> Done with errors! 
 					</div>
@@ -58,7 +62,7 @@ class StatusInfo extends Component{
 			else{
 				status = (
 					<div className="success">
-						<button className="btn btn-success" onClick={this.props.onNextLevel.bind(this)}>
+						<button className="btn btn-lg btn-success" onClick={this.props.onNextLevel.bind(this)}>
 							Next Level
 						</button> Well Done! 
 					</div>
